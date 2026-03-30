@@ -1,0 +1,165 @@
+html { 
+  scroll-behavior: smooth; 
+}
+
+.menu-item::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #ff0000;
+  transition: width 0.3s;
+  margin-top: 5px;
+}
+
+.menu-item:hover::after { 
+  width: 100%; 
+}
+
+.mobile-menu { 
+  transform: translateX(100%); 
+  transition: transform 0.3s ease-in-out; 
+}
+
+.mobile-menu.active { 
+  transform: translateX(0); 
+}
+
+.auth-buttons .login { 
+  transition: all 0.3s ease; 
+}
+
+.auth-buttons .login:hover { 
+  background-color: #b11e1e; 
+  color: white; 
+}
+
+.auth-buttons .register { 
+  transition: all 0.3s ease; 
+}
+
+.auth-buttons .register:hover { 
+  background-color: rgba(222, 166, 99, 0.1); 
+}
+
+/* Tombol back to top */
+#backToTop {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  background-color: #ff0000;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 50;
+}
+
+#backToTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ubah background garis bawah menu jadi merah KRL */
+.menu-item::after {
+  /* ... kode lainnya tetap ... */
+  background: #E32227; 
+}
+
+/* Ubah background hover tombol login auth jadi biru KRL */
+.auth-buttons .login:hover { 
+  background-color: #0054A6; 
+  color: white; 
+}
+
+.auth-buttons .register:hover { 
+  background-color: rgba(227, 34, 39, 0.1); /* Efek transparan merah KRL */
+  color: #E32227;
+}
+
+/* Pastikan tombol back to top di css di hapus saja karena sudah saya masukkan class tailwind langsung di tag <button> HTML-nya agar lebih praktis! */
+
+.input-field {
+  transition: all 0.3s ease;
+}
+
+.input-field:focus {
+  box-shadow: 0 0 0 3px rgba(0, 84, 166, 0.2); /* Efek glow biru KRL */
+}/* Transisi halus saat gambar berubah di login dan register */
+#slideshow {
+  transition: background-image 1.5s ease-in-out;
+}
+
+/* Mempercantik scrollbar pada form register yang panjang */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1; 
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8; 
+}
+/* --- CSS KHUSUS DASHBOARD PETUGAS --- */
+
+/* Tombol Mengambang (Floating Action Button) Persegi Panjang */
+.floating-btn {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  z-index: 50; /* Memastikan tombol selalu berada di atas tabel */
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Mempercantik Scrollbar pada Tabel Dashboard */
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px; /* Scrollbar horizontal */
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #f8fafc; 
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #cbd5e1; 
+  border-radius: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8; 
+}
+
+/* Efek Tooltip (Teks kecil saat kursor diarahkan ke tombol Edit/Hapus) */
+.tooltip {
+  position: relative;
+}
+.tooltip::after {
+  content: attr(data-tip);
+  position: absolute;
+  bottom: 120%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #1e293b;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.2s ease;
+}
+.tooltip:hover::after {
+  opacity: 1;
+  visibility: visible;
+}
